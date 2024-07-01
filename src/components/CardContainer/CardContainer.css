@@ -1,0 +1,9 @@
+.cardsContainer{
+    height: 85vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    overflow-y:unset;
+    margin-top: 50px;
+}
