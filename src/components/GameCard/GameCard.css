@@ -31,10 +31,11 @@
   border-radius: 15px;
 }
 
-.card:hover .first-content {
-  height: 0px;
+.card:hover .first-content{
+  height: 0%;
   opacity: 0;
 }
+
 
 .second-content {
   height: 0%;
@@ -57,9 +58,5 @@
 }
 
 .cardBackground{
-    size: 50%;
-}
-
-.cardBackgroundError{
-    size: 20%;
+  size: 50%;
 }
