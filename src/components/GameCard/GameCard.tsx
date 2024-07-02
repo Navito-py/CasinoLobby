@@ -1,9 +1,12 @@
 import './GameCard.css'
-import { CardInterface } from '../../interface/cardContainerInterface';
 import NO_CONTENT_AVIABLE from '../../assets//NoContent.jpeg'
 import { useState } from 'react';
 
-
+interface CardInterface {
+    img: string,
+    id: string,
+    name: string,
+}
 
 const GameCard = (props: CardInterface) => {
 
