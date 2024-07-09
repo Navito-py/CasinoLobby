@@ -1,19 +1,23 @@
-import './SearchBar.css'
+import classes from './SearchBar.module.css'
 import { useState } from 'react';
 
 interface SearchBarProps {
-    searchFunction: Function
+    searchFunction: (prop: string) => void
 }
 
 function SearchBar(props: SearchBarProps) {
 
     const [search, setSearch] = useState('')
 
+    const handleSearch = async (event: string) => {
+        setSearch(event)
+        props.searchFunction(search)
+    }
+
     return (
         <>
             <div className="searchBarContainer">
-                <input onChange={(e) => { setSearch(e.target.value) }} placeholder='Search...' className='searchBarInput' type='text' />
-                <button onClick={() => props.searchFunction(search)} className='searchBarButton'>Search</button>
+                <input onChange={(e) => { handleSearch(e.target.value) }} placeholder='Search...' className={classes.searchBarInput} type='text' />
             </div>
         </>
     );

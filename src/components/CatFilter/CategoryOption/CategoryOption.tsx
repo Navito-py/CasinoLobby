@@ -1,4 +1,4 @@
-import './CategoryOption.css'
+import classes from './CategoryOption.module.css'
 
 interface OptionsInterface {
     name: string
@@ -6,7 +6,7 @@ interface OptionsInterface {
 
 const CategoryOption = (optionProps: OptionsInterface) => {
     return (
-        <option className='optionSelectCategory'>{optionProps.name}</option>
+        <option className={classes.optionSelectCategory}>{optionProps.name}</option>
     )
 }
 

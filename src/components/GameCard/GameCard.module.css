@@ -20,7 +20,7 @@
   background-color: rgb(80, 77, 77);
 }
 
-.first-content {
+.firstContent {
   height: 100%;
   width: 100%;
   transition: all 0.4s;
@@ -31,13 +31,13 @@
   border-radius: 15px;
 }
 
-.card:hover .first-content{
+.card:hover .firstContent{
   height: 0%;
   opacity: 0;
 }
 
 
-.second-content {
+.secondContent {
   height: 0%;
   width: 100%;
   opacity: 0;
@@ -50,7 +50,7 @@
   transform: rotate(90deg) scale(-1);
 }
 
-.card:hover .second-content {
+.card:hover .secondContent {
   opacity: 1;
   height: 100%;
   font-size: 1.8rem;

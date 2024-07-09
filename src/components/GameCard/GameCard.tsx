@@ -1,4 +1,4 @@
-import './GameCard.css';
+import classes from './GameCard.module.css';
 import { memo } from 'react';
 import NO_CONTENT_AVIABLE from '../../assets/NoContent.jpeg';
 import { useState } from 'react';
@@ -17,16 +17,16 @@ const GameCard = memo((props: CardInterface) => {
     }
 
     return (
-        <div className="card">
-            <div className="first-content">
+        <div className={classes.card}>
+            <div className={classes.firstContent}>
                 <img
                     onError={handleImageError}
                     src={isImageValid ? props.img : NO_CONTENT_AVIABLE}
                     alt={props.name}
-                    className="cardBackground"
+                    className={classes.cardBackground}
                 />
             </div>
-            <div className="second-content">
+            <div className={classes.secondContent}>
                 <span>{props.name}</span>
             </div>
         </div>

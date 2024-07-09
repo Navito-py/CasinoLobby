@@ -1,4 +1,4 @@
-import './App.css';
+import classes from './App.module.css';
 import CardContainer from '../CardContainer/CardContainer';
 import FakeData from '../../data/data.json';
 import FilterContainer from '../Filterscontainer/FilterContainer';
@@ -34,12 +34,15 @@ function App() {
         setCategories(getCategories(gamesData));
     }, [gamesData]);
 
-    const filterResultByCategory = useCallback((categoryId: string) => {
-        if (categoryId === ALL_CATEGORIES_ID) {
-            setGamesDataFiltered(gamesData);
-        } else {
-            const filteredInfo = gamesData.filter((item) => item.categories.includes(categoryId));
-            setGamesDataFiltered(filteredInfo);
+    const filterResultByCategory = useCallback((categoryId: string | undefined) => {
+        if (categoryId !== undefined) {
+
+            if (categoryId === ALL_CATEGORIES_ID) {
+                setGamesDataFiltered(gamesData);
+            } else {
+                const filteredInfo = gamesData.filter((item) => item.categories.includes(categoryId));
+                setGamesDataFiltered(filteredInfo);
+            }
         }
     }, [gamesData]);
 
@@ -55,7 +58,7 @@ function App() {
     }, [gamesData]);
 
     return (
-        <div className="mainSplash">
+        <div className={classes.mainSplash}>
             <FilterContainer
                 filterByNameFunction={searchGamesByName}
                 filterFunction={filterResultByCategory}
